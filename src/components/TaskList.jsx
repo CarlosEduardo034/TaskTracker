@@ -1,6 +1,6 @@
 function TaskList({ Tasks, onToggle, onDelete }) {
     if (Tasks.length === 0) {
-      return <p>Sem hábitos ainda. Adicione um! 💪</p>;
+      return <p>Sem Tasks ainda. Adicione um! 💪</p>;
     }
   
     return (
