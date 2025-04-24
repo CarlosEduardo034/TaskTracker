@@ -17,6 +17,7 @@ function TaskForm({ onAdd }) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Nova Tesk..."
+        maxLength={40}
       />
       <button type="submit">Adicionar</button>
     </form>

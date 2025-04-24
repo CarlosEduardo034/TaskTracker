@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
+import Footer from './components/Footer';
 import './styles/App.css';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
   }, [Tasks]);
 
   const addTask = (name) => {
+    const trimmedName = name.trim().slice(0, 40); 
+
+    if (trimmedName.length === 0) return;
     const newTask = {
       id: Date.now(),
       name,
@@ -36,6 +40,7 @@ function App() {
       <h1>Task Tracker 📝</h1>
       <TaskForm onAdd={addTask} />
       <TaskList Tasks={Tasks} onToggle={toggleTask} onDelete={deleteTask} />
+      <Footer />
     </div>
   );
 }
